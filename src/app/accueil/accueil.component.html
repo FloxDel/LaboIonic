@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-button [disabled]="isConnected" href="/login">Login</ion-button>
+<ion-button [disabled]="!isConnected">logout</ion-button> -->
+   <div style="text-align: center;"> Liste de films </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let film of films, let i = index">
+  <ion-item button (click)="detail(film.id)" detail="true">
+    <!-- [href]="'/detail/'+film.id" -->
+    <ion-label> {{film.title}} </ion-label>
+     <p> {{film.releaseYear}} | {{film.description}} </p>
+  </ion-item>
+</div>
+</ion-content>
+
+
+
+
+<ion-tabs>
+  <ion-tab-bar>
+    <!-- <ion-tab-button tab="accueil" [routerLink]="['','accueil']">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-label> Back </ion-label>
+       <ion-badge></ion-badge>
+    </ion-tab-button> -->
+
+    <ion-tab-button *ngIf="isConnected" (click)="logout()">
+      <ion-icon name="exit"></ion-icon>
+      <ion-label > Logout </ion-label>
+    </ion-tab-button>
+    <ion-tab-button *ngIf="!isConnected"   [routerLink]="['','login']">  <!--href="login"-->
+      <ion-icon name="person"></ion-icon>
+  <ion-label  > Login </ion-label>
+
+    </ion-tab-button>
+
+
+  </ion-tab-bar>
+</ion-tabs>

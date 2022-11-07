@@ -1,0 +1,44 @@
+
+<ion-toolbar>
+  <!-- <ion-button [disabled]="isConnected" href="/login">Login</ion-button>
+<ion-button [disabled]="!isConnected">logout</ion-button> -->
+ <div style="text-align: center;"> Connexion </div>
+</ion-toolbar>
+<ion-content>
+<ion-list>
+  <ion-item>
+  <ion-label> Login : </ion-label>
+  <ion-input [(ngModel)]="mail" placeholder="entrez votre adresse mail"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label> Password : </ion-label>
+  <ion-input [(ngModel)]="pass" placeholder="entrez votre mot de passe"></ion-input>
+</ion-item>
+<ion-button (click)="login(mail,pass)"> Login </ion-button>
+</ion-list>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer Toolbar</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-toolbar>
+<ion-tabs>
+  <ion-tab-bar>
+    <!-- <ion-tab-button routerLink="accueil">
+      <ion-icon name="arrow-back"></ion-icon>
+      <ion-label> Back </ion-label> -->
+      <!-- <ion-badge></ion-badge> -->
+    <!-- </ion-tab-button> -->
+    <ion-buttons slot="start">
+      <ion-back-button text="Volver" icon="close"></ion-back-button>
+    </ion-buttons>
+
+    <ion-tab-button [routerLink]="['','accueil']">
+      <ion-icon name="videocam"></ion-icon>
+      <ion-label> Films </ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+</ion-toolbar>
